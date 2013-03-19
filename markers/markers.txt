@@ -1,0 +1,2 @@
+place markers in this folder to set markers manually
+file names should correspond to the taxonomy term slug of the corresponding taxonomy as set in the admin panel
