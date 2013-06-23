@@ -33,7 +33,12 @@ if ( file_exists( $file ) && !defined( '_FROM_PLUGIN_' ) ) {
         GeoMashupRenderMap::enqueue_script('markerclusterer-js');
         GeoMashupRenderMap::enqueue_script('infobox-js');
         
+        ob_start();
         GeoMashupRenderMap::head(); 
+        $code = ob_get_clean();
+        
+        $code = str_replace('http://www.nellaterradisandokan.com/', 'http://'.$_SERVER['HTTP_HOST'].'/', $code);
+        echo $code;
         
     ?>
     

@@ -2,6 +2,37 @@
 var geomashupCustomMarkerCache = new Array();
 var cluster = false;
 
+GeoMashup.addAction( 'markerClustererOptions', function ( clusterer_opts ) {
+   //console.log("called");
+   clusterer_opts.gridSize = 50;
+   clusterer_opts.maxZoom = GeoMashup.opts.cluster_max_zoom;
+   
+   if (
+      GeoMashup.opts.custom.cluster_icon_1
+      && GeoMashup.opts.custom.cluster_icon_2
+      && GeoMashup.opts.custom.cluster_icon_3
+    )
+    {
+      clusterer_opts.styles = new Array();
+      var i;
+      for (i=1; i<=3; i++)
+      {
+         var k = "cluster_icon_"+i;
+         clusterer_opts.styles.push({
+           url: GeoMashup.opts.custom[k],
+           height: GeoMashup.opts.custom["size_y_"+k],
+           width: GeoMashup.opts.custom["size_x_"+k],
+           anchor: [ GeoMashup.opts.custom["anchor_x_"+k], GeoMashup.opts.custom["anchor_y_"+k] ],
+           textColor: GeoMashup.opts.custom["color_"+k],
+           textSize: GeoMashup.opts.custom["size_"+k]
+         });
+      }
+      //console.log(o);
+    }
+   //console.log(clusterer_opts);
+   return clusterer_opts;
+ });
+
 GeoMashup.addAction( 'loadedMap', function( properties, object ) {
    //console.log(object);
    
@@ -16,7 +47,8 @@ GeoMashup.addAction( 'loadedMap', function( properties, object ) {
       if (a) a.anchor = new google.maps.Point(16, 34);
    }
    // display clusters only when there are no polylines because close objects may overlap
-   if ( (mkrs.length > 0) && ( !GeoMashup.opts.connecting_posts ) )
+   //console.log(GeoMashup.opts);
+   if ( (mkrs.length > 0) && ( !GeoMashup.opts.connecting_posts ) && 0)
    {
       var o = {
          gridSize: 50,
@@ -44,7 +76,9 @@ GeoMashup.addAction( 'loadedMap', function( properties, object ) {
          }
          //console.log(o);
        }
-      cluster = new MarkerClusterer(GeoMashup.map.maps.googlev3, mkrs, o);
+       
+      //cluster = new MarkerClusterer(GeoMashup.map.maps.googlev3, mkrs, o);
+      //GeoMashup.doAction( 'markerClustererOptions', o );
    }
    
    if ( GeoMashup.opts.connecting_posts ) {
@@ -71,7 +105,7 @@ GeoMashup.addAction( 'loadedMap', function( properties, object ) {
 
    });
    
-   //if(0)
+   if (document.createEvent)
    google.maps.event.addListener(GeoMashup.map.maps.googlev3, "rightclick", function (e) {
    
       var menu_event = document.createEvent("MouseEvents");
