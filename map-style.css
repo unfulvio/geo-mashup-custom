@@ -1,3 +1,9 @@
+
+/**
+ *  This is just a sample stylesheet for the map frame and the info window
+ *  You should customise this with your own stylesheet by overriding it with a copy of this file into your theme.
+ */
+
 html, body              { height: 100%; margin: 0; padding: 0; }
 
 .locationinfo           { overflow: hidden; width: 204px; height: 110px; padding: 8px; background: #F2ECD8; border: 2px solid #604444; vertical-align: top; }

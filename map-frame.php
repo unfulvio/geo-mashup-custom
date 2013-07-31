@@ -1,15 +1,22 @@
 <?php
 
-//the map info window can be overriden if a template with identical name is found in theme
+/**
+ * the map info window can be overriden
+ * if a template with identical name is found in the active theme
+ *
+ */
+
 $file = get_stylesheet_directory() . '/map-frame.php';
+
 if ( file_exists( $file ) && !defined( '_FROM_PLUGIN_' ) ) {
     
-   define( '_FROM_PLUGIN_', true );
-   include $file;
-   exit;
+       define( '_FROM_PLUGIN_', true );
+       include $file;
+       exit;
    
 }
 
+// @important do not insert a line break here after the php closing tag!
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <!--[if lte IE 6]>
@@ -36,8 +43,8 @@ if ( file_exists( $file ) && !defined( '_FROM_PLUGIN_' ) ) {
         ob_start();
         GeoMashupRenderMap::head(); 
         $code = ob_get_clean();
-        
-        $code = str_replace('http://www.nellaterradisandokan.com/', 'http://'.$_SERVER['HTTP_HOST'].'/', $code);
+        $url = get_home_url( '/' );
+        $code = str_replace( $url, 'http://'.$_SERVER['HTTP_HOST'].'/', $code );
         echo $code;
         
     ?>
@@ -54,7 +61,7 @@ if ( file_exists( $file ) && !defined( '_FROM_PLUGIN_' ) ) {
             <?php endif; ?>
         }
         img { 
-            max-width: auto; <?php // fix for flexible or fluid layouts with max-width: 100% ?>
+            max-width: auto; <?php // possible fix for flexible or fluid layouts with max-width: 100% ?>
         }
     </style>
     

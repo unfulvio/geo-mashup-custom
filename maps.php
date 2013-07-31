@@ -3,7 +3,7 @@
 function geo_mashup_custom_locations_json_filter( $json_properties, $queried_object ) {
     
     $key = 'gmtmp' . $queried_object->object_id;
-    // uncomment the next line to enable caching
+    // uncomment the next line to enable caching (may not work on some environments!)
     if ( $ret = get_transient( $key ) ) 
             return $ret;
     

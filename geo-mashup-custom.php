@@ -1,14 +1,12 @@
 <?php /*
-Plugin Name: Geo Mashup Custom
-Plugin URI: http://soon-on.github.com
+Plugin Name: GeoMashup Custom
+Plugin URI: https://github.com/kuching/geo-mashup-custom
 Description: Extends Geo Mashup plugin with better handling of markers and support for polylines.
 Version: 1.0
-Author: Oleksandr
-Author URI: http://null/
+Authors: @kuching, @alexandre67fr
+Author URI: https://github.com/kuching/geo-mashup-custom
 Minimum WordPress Version Required: 3.5
 */
-
-
 
 // Geo Mashup Custom settings and options
 include_once dirname(__FILE__) . '/options.php';
@@ -138,4 +136,4 @@ $geo_mashup_custom = new GeoMashupCustom();
 
 include dirname(__FILE__) . '/maps.php';
 
-} // end if Geo Mashup Custom class exists
+} // endif Geo Mashup Custom class exists
