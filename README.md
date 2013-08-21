@@ -6,7 +6,7 @@ Extends [GeoMashup](https://github.com/cyberhobo/wp-geo-mashup "GeoMashup on Git
 
 This WordPress plugin is an expansion of the [original GeoMashup Custom plugin](https://code.google.com/p/wordpress-geo-mashup/wiki/Documentation#APIs_For_Developers "GeoMashup API") kindly provided by GeoMashup plugin author, [@cyberhobo](https://github.com/cyberhobo "Dylan Kuhn"), as a framework to extend and customise GeoMashup. 
 
-*DISCLAIMER:* This is still work in progress, consider the plugin as a guideline on how to use and adapt the original GeoMashup Custom for your own theme or plugin development
+*DISCLAIMER:* This is still work in progress and might be broken, consider the plugin as a guideline on how to use and adapt the original GeoMashup Custom for your own theme or plugin development
 
 
 ## How to install
