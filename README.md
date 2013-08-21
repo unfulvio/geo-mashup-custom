@@ -4,7 +4,9 @@ Geo Mashup Custom Extension
 
 Extends [GeoMashup](https://github.com/cyberhobo/wp-geo-mashup "GeoMashup on GitHub") WordPress plugin for better handling of markers (for both individual post types and post type archives) with the ability to load markers from a post taxonomy term, customisation of cluster markers, better support of Google Maps API V3.
 
-This WordPress plugin is a rework of the [original GeoMashup Custom plugin](https://code.google.com/p/wordpress-geo-mashup/wiki/Documentation#APIs_For_Developers "GeoMashup API") kindly provided by GeoMashup plugin author, [@cyberhobo](https://github.com/cyberhobo "Dylan Kuhn"), as a framework to extend and customise GeoMashup. 
+This WordPress plugin is an expansion of the [original GeoMashup Custom plugin](https://code.google.com/p/wordpress-geo-mashup/wiki/Documentation#APIs_For_Developers "GeoMashup API") kindly provided by GeoMashup plugin author, [@cyberhobo](https://github.com/cyberhobo "Dylan Kuhn"), as a framework to extend and customise GeoMashup. 
+
+*DISCLAIMER:* This is still work in progress, consider the plugin as a guideline on how to use and adapt the original GeoMashup Custom for your own theme or plugin development
 
 
 ## How to install
@@ -59,4 +61,9 @@ Please refer to [GeoMashup documentation on how to customise other content](http
 
 ## Displaying maps
 
-Please refer to [GeoMashup documentation](https://code.google.com/p/wordpress-geo-mashup/wiki/Documentation) on how to show maps in your theme. This plugin extensions focuses on extending and utilising of GeoMashup for theme development and assumes you'll be using GeoMashup::map( $args ) function method and query variables or options as described in the [GeoMashup tag reference docs](https://code.google.com/p/wordpress-geo-mashup/wiki/TagReference "GeoMashup tag reference").
+Please refer to [GeoMashup documentation](https://code.google.com/p/wordpress-geo-mashup/wiki/Documentation) on how to show maps in your theme. This plugin extensions focuses on extending and utilising of GeoMashup for theme development and assumes you'll be using `echo GeoMashup::map( $args )` function method and query variables or options as described in the [GeoMashup tag reference docs](https://code.google.com/p/wordpress-geo-mashup/wiki/TagReference "GeoMashup tag reference").
+
+## ToDo
+
+* At the moment this plugin relies on an hardcoded Advanced Custom Field term meta to get the markers data which makes it not very usable
+* Basic templates for the info-window and the map-frame look probably awful and have a lot of garbage and need cleanup (they were quickly recycled from an actual installation)
